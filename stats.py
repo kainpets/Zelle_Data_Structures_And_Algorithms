@@ -11,14 +11,16 @@ def get_scores():
 		
 
 
-def min_value():
+def min_value(nums):
 	"""find the minimum
 
 	pre: nums is a list of numbers and len(nums) > 0
 	post: returns smalles number in nums"""
-
-	minimum = min(get_scores())
-	print(minimum)
+	
+	
+	nums = min(nums)
+	print("The lowest value is: " + nums)
+	return nums
 
 def max_value(nums):
 	""" find the maximum
@@ -26,10 +28,24 @@ def max_value(nums):
 	pre : nums is a list of numbers and len(nums) > 0
 	post : returns largest number in nums """ 
 
+	
+	nums = max(nums)
+	print("The maximum value is: " + nums)
+	return nums
+
 def average(nums):
 	""" calculate the mean
 	pre : nums is a list of numbers and len(nums) > 0
 	post : returns the mean (a float) of the values in nums """
+
+	my_sum = 0
+	num_of_elements = 0
+	for i in range(nums):
+		my_sum += nums[i]
+		num_of_elements = i
+	
+	print(my_sum / num_of_elements)
+	return my_sum / num_of_elements
 
 def std_deviation(nums):
 	""" calculate the standard deviation
@@ -38,4 +54,6 @@ def std_deviation(nums):
 	post : returns the standard deviation (a float) of the values
 	in nums """
 
-min_value()
+#min_value(get_scores())
+#max_value(get_scores())
+average(get_scores())
